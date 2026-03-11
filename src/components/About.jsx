@@ -227,7 +227,28 @@ export default function About() {
                 >
                   Get In Touch
                 </button>
-                <a href="/resume.pdf" download className="btn-outline">
+                <a
+                  href="/MANI'S%20RESUME.pdf"
+                  onClick={async (e) => {
+                    e.preventDefault();
+                    try {
+                      const res = await fetch("/MANI'S%20RESUME.pdf", { method: 'HEAD' });
+                      if (res.ok) {
+                        const a = document.createElement('a');
+                        a.href = "/MANI'S%20RESUME.pdf";
+                        a.download = 'Mani Resume.pdf';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                      } else {
+                        alert('Resume not available yet. Please add resume.pdf to the public/ folder.');
+                      }
+                    } catch {
+                      alert('Could not load resume. Please try again later.');
+                    }
+                  }}
+                  className="btn-outline"
+                >
                   Download CV
                 </a>
               </motion.div>

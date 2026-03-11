@@ -62,10 +62,8 @@ export default function Navbar() {
             {/* Text */}
             <div className="leading-none">
               <span className="text-base font-black tracking-tight bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                MR
+                MANI R
               </span>
-              <span className="text-gray-500 font-light text-base mx-1">|</span>
-              <span className="text-white font-bold text-sm tracking-wide">MANI R</span>
             </div>
           </motion.a>
 

@@ -33,6 +33,25 @@ export default function Hero() {
     document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleResumeDownload = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("/MANI'S%20RESUME.pdf", { method: 'HEAD' });
+      if (res.ok) {
+        const a = document.createElement('a');
+        a.href = "/MANI'S%20RESUME.pdf";
+        a.download = 'Mani Resume.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      } else {
+        alert('Resume not available yet. Please add resume.pdf to the public/ folder.');
+      }
+    } catch {
+      alert('Could not load resume. Please try again later.');
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -104,8 +123,8 @@ export default function Hero() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="/resume.pdf"
-            download
+            href="/MANI'S%20RESUME.pdf"
+            onClick={handleResumeDownload}
             className="btn-outline"
           >
             Download Resume
