@@ -7,7 +7,7 @@ const socials = [
   { icon: <FiMail size={18} />, href: 'mailto:manikumar2113@gmail.com', label: 'Email' },
 ];
 
-const navLinks = ['About', 'Skills', 'Experience', 'Projects', 'Research', 'Certifications', 'Contact'];
+const navLinks = ['About', 'Education', 'Skills', 'Experience', 'Projects', 'Research', 'Certifications', 'Contact'];
 
 export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
